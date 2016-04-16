@@ -1,0 +1,40 @@
+﻿<Window x:Class="Note.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Note"
+        mc:Ignorable="d"
+        Title="Note" Height="469.052" Width="864.591" WindowStartupLocation="CenterScreen" KeyDown="Window_KeyDown">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="White" Offset="0.666"/>
+            <GradientStop Color="#FFC8E8E1" Offset="0.025"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <DockPanel Margin="0,0,3.4,-20">
+        <WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="0,5,0,10" Width="855" Height="42" RenderTransformOrigin="0.497,0.423">
+            <ToolBar x:Name="toolBar" Height="29" VerticalAlignment="Top" Margin="10,0,0,0" Width="838" FontFamily="Times New Roman" FontSize="16" Background="#99F7F7F7">
+                <Button x:Name="ButtonNew" Content="Очистить" Click="ButtonNew_Click"/>
+                <Button x:Name="ButtonOpen" Content="Открыть" Click="Button_Click" VerticalAlignment="Bottom"/>
+                <Button x:Name="ButtonSave" Background="{x:Null}" Content="Сохранить" Click="ButtonSave_Click"/>
+                <Separator/>
+                <RadioButton x:Name="RadioRead" Content="Режим чтения" Click="RadioRead_Click"/>
+                <RadioButton x:Name="RadioWrite" Content="Режим письма" IsChecked="True" Click="RadioWrite_Click"/>
+                <Separator/>
+                <Button x:Name="ButtonPassCheck" Content="Разблокировать" Click="ButtonPassCheck_Click"/>
+                <PasswordBox x:Name="MyPasswordBox" BorderThickness="1" Margin="0" Width="259"/>
+            </ToolBar>
+        </WrapPanel>
+        <WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="0,-30,0.2,10" Height="393" Width="855">
+            <RichTextBox x:Name="richTextBox" HorizontalAlignment="Left" Height="376" Margin="10,+5.4,0,0" VerticalAlignment="Top" Width="837" FontFamily="Times New Roman" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" FontSize="16">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+        </WrapPanel>
+
+    </DockPanel>
+</Window>
